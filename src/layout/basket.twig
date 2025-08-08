@@ -1,0 +1,195 @@
+{% extends "templates/base.twig" %}
+
+{% set title = "Корзина" %}
+
+{% block page %}
+
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12  col-xl-2">
+                {% include '/inc/catalog/catalog_sitebar_sm.twig' %}
+            </div>
+            <div class="col-12 col-xl-10">
+
+               <div class="my-5">
+                   {% include '/inc/main/breadcrumbs.twig' %}
+               </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-9">
+                        <div class="h-100">
+                            {% include '/inc/basket/basket_item.twig' %}
+
+                            <div class="row my-10 d-flex">
+                                {% for i in 0..2 %}
+                                    <div class="col-12 p-3 col-sm-6 col-md-4">
+                                        {% include '/inc/catalog/catalog_item.twig' %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+
+                            {% for i in 0..2 %}
+                                {% include '/inc/basket/basket_item.twig' %}
+                            {% endfor %}
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-md-3">
+                        <a href="/user-login.html" class="border link-dark text-decoration-none align-items-center fs-3 rounded mb-5 justify-content-between gap-4 d-flex p-3">
+                            Авторизуйтесь, чтобы снизить цену
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_391_355)">
+                                    <path d="M9 12C10.1935 12 11.3381 11.5259 12.182 10.682C13.0259 9.83807 13.5 8.69347 13.5 7.5C13.5 6.30653 13.0259 5.16193 12.182 4.31802C11.3381 3.47411 10.1935 3 9 3C7.80653 3 6.66193 3.47411 5.81802 4.31802C4.97411 5.16193 4.5 6.30653 4.5 7.5C4.5 8.69347 4.97411 9.83807 5.81802 10.682C6.66193 11.5259 7.80653 12 9 12ZM12 7.5C12 8.29565 11.6839 9.05871 11.1213 9.62132C10.5587 10.1839 9.79565 10.5 9 10.5C8.20435 10.5 7.44129 10.1839 6.87868 9.62132C6.31607 9.05871 6 8.29565 6 7.5C6 6.70435 6.31607 5.94129 6.87868 5.37868C7.44129 4.81607 8.20435 4.5 9 4.5C9.79565 4.5 10.5587 4.81607 11.1213 5.37868C11.6839 5.94129 12 6.70435 12 7.5ZM18 19.5C18 21 16.5 21 16.5 21H1.5C1.5 21 0 21 0 19.5C0 18 1.5 13.5 9 13.5C16.5 13.5 18 18 18 19.5ZM16.5 19.494C16.4985 19.125 16.269 18.015 15.252 16.998C14.274 16.02 12.4335 15 9 15C5.565 15 3.726 16.02 2.748 16.998C1.731 18.015 1.503 19.125 1.5 19.494H16.5Z" fill="#1C2026"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M23.781 7.719C23.8508 7.78867 23.9062 7.87143 23.944 7.96255C23.9818 8.05366 24.0013 8.15135 24.0013 8.25C24.0013 8.34865 23.9818 8.44633 23.944 8.53745C23.9062 8.62857 23.8508 8.71133 23.781 8.781L19.281 13.281C19.2113 13.3508 19.1285 13.4063 19.0374 13.4441C18.9463 13.4819 18.8486 13.5013 18.75 13.5013C18.6513 13.5013 18.5536 13.4819 18.4625 13.4441C18.3714 13.4063 18.2886 13.3508 18.219 13.281L15.969 11.031C15.8281 10.8902 15.749 10.6992 15.749 10.5C15.749 10.3008 15.8281 10.1098 15.969 9.969C16.1098 9.82817 16.3008 9.74905 16.5 9.74905C16.6991 9.74905 16.8901 9.82817 17.031 9.969L18.75 11.6895L22.719 7.719C22.7886 7.64915 22.8714 7.59374 22.9625 7.55593C23.0536 7.51812 23.1513 7.49866 23.25 7.49866C23.3486 7.49866 23.4463 7.51812 23.5374 7.55593C23.6285 7.59374 23.7113 7.64915 23.781 7.719Z" fill="#1C2026"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_391_355">
+                                        <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
+                        </a>
+                        <div class="border rounded bg-white p-8 px-5">
+                            <div class="d-flex fs-5 pt-15 justify-content-between align-items-center mb-5">
+                                <div class="fw-medium">
+                                    4 товара
+                                </div>
+                                <div class="fw-medium fs-5">
+                                    33999 ₽
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-end gap-2 my-6">
+                                <span class="fs-3">Промокод</span>
+                                <input type="text" class="form-control p-2 bg-white border" placeholder="">
+                            </div>
+
+                            <div class="fw-medium mb-3">
+                                Скидки:
+                            </div>
+                            <div class="d-flex flex-column gap-1 mb-8">
+                                {% for i in 1..2 %}
+                                    <div class="d-flex gap-2 fs-5 justify-content-between align-items-center">
+                                        <div class="">
+                                            Скидка по акции
+                                        </div>
+                                        <div class="fw-medium ">
+                                            − 5999 ₽
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                                <div class="my-10 d-flex fw-semibold justify-content-between gap-4">
+                                    <div>
+                                        Итого
+                                    </div>
+                                    <div class="fs-6 ">
+                                        33999 ₽
+                                    </div>
+                                </div>
+                                <div class="text-primary d-flex gap-2 my-5 align-items-center fs-4 fw-semibold">
+                                    <i class="theme-icon theme-icon_bonus"></i> <span class="fs-3">1938 ₽ на счет</span>
+                                </div>
+                            </div>
+
+
+
+                                <div class="d-flex gap-4 flex-column">
+                                    <a href="/order.html" type="submit" class="btn btn-primary">
+                                        Оформить заказ
+                                    </a>
+                                    <a href="/catalog.html" class="btn btn-outline-primary">
+                                        продолжить покупки
+                                    </a>
+                                </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="my-20">
+            <div class="h2 text-uppercase">
+                Присмотритесь к этим предложениям
+            </div>
+
+            <div role="tabpanel">
+{#                <div class="border my-8 border-2 rounded p-2 " id="tabsHome">#}
+{#                    <div class="row row-gap-3 border-0 nav nav-tabs">#}
+{#                        {% set sections = [#}
+{#                            { 'title': 'Хиты продаж', 'active': true },#}
+{#                            { 'title': 'Скидки', 'active': false },#}
+{#                            { 'title': 'Новинки', 'active': false },#}
+{#                            { 'title': 'Рекомендации', 'active': false }#}
+{#                        ] %}#}
+{#                        {% for key, section in sections %}#}
+{#                            <div class="col-6 col-md-3">#}
+{#                                <button class="btn text-uppercase btn-tabs p-4 w-100 {{ section.active ? 'active' : '' }}"#}
+{#                                        data-bs-toggle="tab" href="#list-home_{{ key }}" role="tab"#}
+{#                                        aria-controls="list-home_{{ key }}"#}
+{#                                        aria-selected="{{ section.active ? 'true' : 'false' }}">#}
+{#                                    {{ section.title }}#}
+{#                                </button>#}
+{#                            </div>#}
+{#                        {% endfor %}#}
+{#                    </div>#}
+{#                </div>#}
+
+                <div class="my-8 p-2 row" id="tabsHome">
+                    <div class="row col-8 row-gap-3 border-0 nav nav-tabs">
+                        {% set sections = [
+                            { 'title': 'Хиты продаж', 'active': true },
+                            { 'title': 'Скидки', 'active': false },
+                            { 'title': 'Новинки', 'active': false },
+                            { 'title': 'Рекомендации', 'active': false }
+                        ] %}
+                        {% for key, section in sections %}
+                            <div class="col-6 col-md-3">
+                                <button class="btn btn-tabs rounded-5 border-0 fs-5 p-3 w-100 {{ section.active ? 'active' : '' }}"
+                                        data-bs-toggle="tab" href="#list-home_{{ key }}" role="tab"
+                                        aria-controls="list-home_{{ key }}"
+                                        aria-selected="{{ section.active ? 'true' : 'false' }}">
+                                    {{ section.title }}
+                                </button>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+
+
+                <div class="tab-content" id="nav-tabContent">
+                    {% for i in 0..3 %}
+                        <div class="tab-pane fade {{ i == 0 ? 'show active' : '' }}" id="list-home_{{ i }}"
+                             role="tabpanel" aria-labelledby="list-home_{{ i }}-tab">
+                            <div class="row d-flex">
+                                {% for i in 1..4 %}
+                                    <div class="col-12 p-3 col-sm-6 col-md-4 col-lg-3">
+                                        {% include '/inc/catalog/catalog_item.twig' %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="my-21 d-flex justify-content-center">
+            {% include '/inc/callback/email.twig' %}
+        </div>
+
+
+
+    </div>
+
+
+
+
+{% endblock %}

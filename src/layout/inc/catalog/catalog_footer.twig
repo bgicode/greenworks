@@ -1,0 +1,142 @@
+<div class="my-21 ">
+    <img class="w-100 d-none d-sm-block" src="/img/home/certificate_banner.png" alt="">
+    <img class="w-100 d-sm-none" src="/img/home/certificate_banner_sm.png" alt="">
+</div>
+
+
+<div class="my-21">
+    <div class="fs-19 my-5 text-uppercase fw-semibold">
+        Идеи для подарка <br>на Новый год Со скидкой
+    </div>
+    <div class="row d-none d-md-flex">
+        {% for i in 0..3 %}
+            <div class="col-12 p-3 col-sm-6 col-md-4 col-lg-3">
+                {% include '/catalog_item.twig' %}
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="swiper d-block d-md-none" id="swiperCatalogList">
+        <div class="swiper-wrapper">
+            {% for i in 0..6 %}
+                <div class="swiper-slide">
+                    {% include '/catalog_item.twig' %}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination position-relative mt-9 d-flex justify-content-between"></div>
+    </div>
+    <div class="mt-7 text-center">
+        <a href="../catalog.html" class="read-all-link btn btn-outline-primary border-black text-black px-7 py-4">
+            Показать все >
+        </a>
+    </div>
+</div>
+
+
+<div class="my-21">
+    <div class="bg-primary p-2 px-10 text-white fw-bold fs-5">
+        В личном кабинете дешевле: промокод “WELCOME” при регистрации, скидки и кэшбек
+    </div>
+</div>
+
+
+<div class="my-21">
+    <div class="fs-19 my-5 text-uppercase fw-semibold">
+        Готовимся к сезону: <br> Для мастерской, СТО, гаража
+    </div>
+    <div class="row d-none d-md-flex">
+        {% for i in 0..3 %}
+            <div class="col-12 p-3 col-sm-6 col-md-4 col-lg-3">
+                {% include '/catalog_item.twig' %}
+            </div>
+        {% endfor %}
+    </div>
+
+
+    <div class="swiper d-block d-md-none" id="swiperCatalogList">
+        <div class="swiper-wrapper">
+            {% for i in 0..3 %}
+                <div class="swiper-slide">
+                    {% include '/catalog_item.twig' %}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination position-relative mt-9 d-flex justify-content-between"></div>
+    </div>
+    <div class="mt-7 text-center">
+        <a href="../catalog.html" class="read-all-link btn btn-outline-primary border-black text-black px-7 py-4">
+            Показать все >
+        </a>
+    </div>
+</div>
+
+
+<div class="my-21">
+    <img class="w-100 d-none d-sm-block" src="/img/home/sale_banner.png" alt="">
+    <img class="w-100 d-sm-none" src="/img/home/sale_banner_sm.png" alt="">
+</div>
+
+
+<div class="my-21">
+    <div class="fs-19 my-5 text-uppercase fw-semibold">
+        Готовимся к сезону: Для сада и дачи
+    </div>
+    <div class="row d-none d-md-flex">
+        {% for i in 0..3 %}
+            <div class="col-12 p-3 col-sm-6 col-md-4 col-lg-3">
+                {% include '/catalog_item.twig' %}
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="swiper d-block d-md-none" id="swiperCatalogList">
+        <div class="swiper-wrapper">
+            {% for i in 0..6 %}
+                <div class="swiper-slide">
+                    {% include '/catalog_item.twig' %}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination position-relative mt-9 d-flex justify-content-between"></div>
+    </div>
+    <div class="mt-7 text-center">
+        <a href="../catalog.html" class="read-all-link btn btn-outline-primary border-black text-black px-7 py-4">
+            Показать все >
+        </a>
+    </div>
+</div>
+
+<div class="my-21">
+    <div class="fs-19 my-5 text-uppercase fw-semibold">
+        Отзывы
+    </div>
+    {% include '../main/reviews.twig' %}
+
+    
+</div>
+
+
+<div class="my-21">
+    <div class="fs-19 my-4 text-uppercase fw-semibold">
+        Блог
+    </div>
+    <div class="swiper" id="swiperHomeBlogList">
+        <div class="swiper-wrapper">
+            {% for i in 0..6 %}
+                <div class="swiper-slide">
+                    {% include '../blog/blog_preview.twig' %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="mt-7 text-center">
+        <a href="/blog.html" class="read-all-link btn btn-outline-primary border-black text-black px-7 py-4">
+            Читать все >
+        </a>
+    </div>
+</div>
+
+<div class="my-21 d-flex justify-content-center">
+    {% include '../callback/email.twig' %}
+</div>

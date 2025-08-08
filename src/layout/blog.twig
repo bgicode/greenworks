@@ -1,0 +1,47 @@
+{% extends 'templates/base.twig' %}
+{% set title = 'Блог' %}
+
+{% block page %}
+
+
+    <div class="container">
+        <div class="row">
+
+            
+            {% include '/inc/catalog/catalog_sitebar.twig' %}
+            
+            <div class="col-12 col-xl-10">
+                <div class="my-5">
+                    {% include '/inc/main/breadcrumbs.twig' %}
+                </div>
+
+                <h1 class="my-3 fs-11 text-uppercase">
+                    бЛОГ
+                </h1>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="/blog.html" type="button" class="btn btn-dark py-3 rounded-5">Рубрика</a>
+                    {% for i in 0..3 %}
+                        <a href="/blog.html" type="button" class="btn py-3 btn-light rounded-5">Рубрика</a>
+                    {% endfor %}
+                </div>
+                <div class="my-10 pb-5">
+                    <div class="row row-gap-7 mb-10">
+
+                        {% for i in 0..23 %}
+                            <div class="col-6 col-md-3 col-lg-4">
+                                {% include '/inc/blog/blog_preview.twig' %}
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    {% include '/inc/main/pagination.twig' %}
+
+                </div>
+
+                {% include '/inc/callback/email.twig' %}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

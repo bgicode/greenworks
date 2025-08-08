@@ -1,0 +1,169 @@
+{% extends "templates/base.twig" %}
+
+{% set title = "Контакты" %}
+
+{% block page %}
+    <div class="container">
+        <div class="row">
+
+            {# <div class="col-12  col-xl-2">
+                
+            </div> #}
+            {% include '/inc/catalog/catalog_sitebar_sm.twig' %}
+            <div class="col-12 col-xl-10">
+                <div class="my-5">
+                    {% include '/inc/main/breadcrumbs.twig' %}
+                </div>
+
+                <h1 class="fs-19 my-5 text-uppercase fw-semibold">
+                    Наши контакты
+                </h1>
+
+                <div class="row row-gap-8">
+                    <div class="col-12 col-md-6">
+                        {% set contactInfo = [
+                            {
+                                'type': '',
+                                'title': 'Адрес',
+                                'text': 'г. Оренбург, ул. Монтажников, д. 32, офис 310'
+                            },
+                            {
+                                'type': 'tel:',
+                                'title': 'Телефон',
+                                'text': '+7 (996) 571-46-77'
+                            },
+                            {
+                                'type': 'mailto:',
+                                'title': 'Email',
+                                'text': 'greenhouse56@yandex.ru'
+                            }
+                        ] %}
+                        <div class="d-flex flex-column gap-7">
+
+                            {% for k,v in contactInfo %}
+                                <div class="d-flex flex-column gap-3">
+                                    <div class="text-primary fw-semibold fs-5">
+                                        {{ v.title }}
+                                    </div>
+                                    <div class="fs-6">
+                                        <a href="{{ v.type }}" class="link-dark text-decoration-none">
+                                            {{ v.text }}
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                            <div class="d-flex gap-2">
+                                {% set socialList = [
+                                    'telegram',
+                                    'vk',
+                                    'youtube',
+                                    'rutube'
+                                ] %}
+                                {% for i in socialList %}
+                                    <a href="#" class="contacts-link-social">
+                                        <svg class="icon">
+                                            <use xlink:href="#{{ i }}"/>
+                                        </svg>
+                                    </a>
+                                {% endfor %}
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div class="rounded overflow-hidden h-100 w-100" id="contactPageMap">
+                            <div style="position:relative;overflow:hidden;"><a
+                                        href="https://yandex.ru/maps/48/orenburg/?utm_medium=mapframe&utm_source=maps"
+                                        style="color:#eee;font-size:12px;position:absolute;top:0px;">Оренбург</a><a
+                                        href="https://yandex.ru/maps/48/orenburg/house/ulitsa_montazhnikov_32/YUwYdwFmSEAFQFtrfXRxdHpnbQ==/?ll=55.166153%2C51.805649&utm_medium=mapframe&utm_source=maps&z=16"
+                                        style="color:#eee;font-size:12px;position:absolute;top:14px;">Улица Монтажников,
+                                    32 на карте Оренбурга — Яндекс Карты</a>
+                                <iframe src="https://yandex.ru/map-widget/v1/?ll=55.166153%2C51.805649&mode=whatshere&whatshere%5Bpoint%5D=55.166152%2C51.805649&whatshere%5Bzoom%5D=17&z=16"
+                                        width="100%" height="300" frameborder="1" allowfullscreen="true"
+                                        style="position:relative;"></iframe>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-15 mt-lg-23">
+                    <div class="mb-8">
+                        <h2 class="fs-19 my-5 mb-2 text-uppercase fw-semibold">
+                            Категории товаров
+                        </h2>
+                        <div class="fs-8 mb-8">
+                            Найдёте все необходимое из 100500 товаров в 1050 категориях
+                        </div>
+                    </div>
+
+                    {% set categoryList = [
+                        'Газонокосилки',
+                        'Триммеры',
+                        'Снегоуборочная техника',
+                        'Цепные пилы',
+                        'Кусторезы и высоторезы',
+                        'Воздуходувки и пылесосы',
+                        'Мойки, насосы и компрессоры',
+                        'Аэраторы и скарификаторы',
+                        'Культиваторы',
+                        'Садовые тракторы',
+                        'Лодочные моторы',
+                        'Техника для сада',
+                        'Ручной инструмент',
+                        'Аккумуляторы и зарядные устройства',
+                        'Товары для отдыха и туризма'
+                    ] %}
+
+                    <div class="d-none d-md-block">
+                        <div class="swiper" id="swiperContactPageCatalogList">
+                            <div class="swiper-wrapper">
+                                {% for key, val in categoryList %}
+                                    <div class="swiper-slide">
+                                        <a href="/catalog.html"
+                                           class="link-dark d-flex gap-3 flex-column fs-4 fs-lg-8 text-decoration-none">
+                                            <div class="bg-light rounded catalog-section-preview p-2">
+                                                <img src="/img/catalog/section_{{ key }}.png" alt="">
+                                            </div>
+                                            <span class="text-uppercase fw-semibold">
+                                                {{ val }}
+                                            </span>
+                                        </a>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-md-none">
+                        <div class="row row-gap-8">
+                            {% for key, val in categoryList %}
+                                <div class="col-4 col-md-3">
+                                    <a href="/catalog-section.html"
+                                       class="link-dark d-flex gap-3 flex-column fs-4 fs-lg-7 text-decoration-none">
+                                        <div class="bg-light catalog-section-preview p-2">
+                                            <img src="/img/catalog/section_{{ key }}.png" alt="">
+                                        </div>
+                                        <span class="text-uppercase fw-semibold">
+                                        {{ val }}
+                                    </span>
+                                    </a>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    {% include '/inc/callback/email.twig' %}
+
+{% endblock %}

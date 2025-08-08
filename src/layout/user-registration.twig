@@ -1,0 +1,140 @@
+{% extends "templates/base.twig" %}
+
+{% set title = "Регистрация" %}
+
+{% block page %}
+
+    <div class="container">
+        <div class="row">
+
+            
+            {% include '/inc/catalog/catalog_sitebar.twig' %}
+            
+            <div class="col">
+                <div class="my-5">
+                    {% include '/inc/main/breadcrumbs.twig' %}
+                    <div class="my-10 row fs-5">
+                        <div class="col-12 col-md-6">
+                            <p>
+                                Регистрируясь, вы получаете доступ к закрытым скидкам и и персональным предложениям,
+                                участвуете в бонусной программе, а также можете отслеживать статус своих заказов.
+                            </p>
+                        </div>
+                        <div class="col-12 col-md-5">
+                            <p>
+                                К тому же, потратив время на заполнение своих данных при регистрации, в следующий раз вы
+                                можете оформлять зазаказы в 1 клик и экономить драгоценные минуты.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        {% set formFields = [
+                            {
+                                'label': 'Имя',
+                                'name': 'name',
+                                'type': 'text',
+                                'required': false
+                            },
+                            {
+                                'label': 'Фамилия',
+                                'name': 'surname',
+                                'type': 'text',
+                                'required': false
+                            },
+                            {
+                                'label': 'E-mail *',
+                                'name': 'email',
+                                'type': 'email',
+                                'required': true
+                            },
+                            {
+                                'label': 'Телефон *',
+                                'name': 'phone',
+                                'type': 'tel',
+                                'required': true
+                            },
+                            {
+                                'label': 'Пароль (не менее 6 символов) *',
+                                'name': 'password',
+                                'type': 'password',
+                                'required': true
+                            },
+                            {
+                                'label': 'Подтверждение пароля *',
+                                'name': 'password_confirm',
+                                'type': 'password',
+                                'required': true
+                            }
+                        ] %}
+
+                        <form class="row row-gap-3" method="post" action="">
+                            {% for field in formFields %}
+                                <div class="form-group col-12 col-lg-6">
+                                    <input class="form-control" placeholder="{{ field.label }}" type="{{ field.type }}" id="{{ field.name }}"
+                                           name="{{ field.name }}" {% if field.required %}required{% endif %}>
+                                </div>
+                            {% endfor %}
+
+                            <div class="form-group col-12">
+                                <div class="row align-items-end">
+                                    <div class="col-12 col-lg-6">
+
+                                        <input class="form-control" type="text" id="captcha"
+                                               name="captcha" placeholder="Введите слово на картинке*" required>
+                                    </div>
+                                    <div class="col-12 col-lg-2">
+                                        <div class="bg-white p-5 text-center">
+                                            капча
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row align-items-center">
+                                <div class="col-12 col-lg-6 mt-9 mb-3">
+                                    <div class="d-flex align-items-center gap-10">
+                                        <button class="btn w-100 btn-primary" type="submit">Войти</button>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 d-flex  align-items-center h-auto">
+                                    <a class="text-decoration-none d-block link-dark" href="/user-reset-password.html">
+                                        Забыли пароль?
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 ">
+                                <div class="d-flex flex-column gap-3">
+                                    <div class="form-check col-12 gap-2 align-items-center d-flex">
+                                        <input class="form-check-input mb-1" type="checkbox" value="" id="checkDefault_0">
+                                        <label class="form-check-label mb-0 fs-3" for="checkDefault_0">
+                                            Запомнить меня на этом компьютере
+                                        </label>
+                                    </div>
+                                    <div class="form-check col-12 gap-2 align-items-center d-flex">
+                                        <input class="form-check-input mb-1" type="checkbox" value="" checked disabled id="checkDefault_1">
+                                        <label class="form-check-label mb-0 fs-3" for="checkDefault_1" >
+                                            Я ознакомлен(а) с Политикой в отношении обработки персональных <br> данных
+                                        </label>
+                                    </div>
+                                    <div class="form-check col-12 gap-2 align-items-center d-flex">
+                                        <input class="form-check-input mb-1" type="checkbox" value="" checked disabled id="checkDefault_2">
+                                        <label class="form-check-label mb-0 fs-3" for="checkDefault_2" >
+                                            Даю согласие на обработку моих персональных данных
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+                {% include '/inc/callback/email.twig' %}
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

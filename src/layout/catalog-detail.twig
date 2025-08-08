@@ -1,0 +1,23 @@
+{% extends "templates/base.twig" %}
+
+{% set title = "Детальная страница каталога" %}
+
+{% block page %}
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12  col-xl-2">
+                {% include '/inc/catalog/catalog_sitebar_sm.twig' %}
+            </div>
+            <div class="col-12 col-xl-10">
+                <div class="my-5">
+                    {% include '/inc/main/breadcrumbs.twig' %}
+                </div>
+                <div class="my-10">
+                    catalog detail
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

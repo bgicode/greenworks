@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=360, initial-scale=1.0">
+
+    {#
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#fffff">
+    <meta name="theme-color" content="#fffff">
+    #}
+
+    <meta name="description" content="{{ description }}">
+    <title>{{ title }}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/app.min.css">
+
+</head>
+
+<body>
+<div class="template" style="background: #FBFBFB">
+
+
+    {% include "../inc/main/header.twig" %}
+    {% include "../inc/main/sprite.twig" %}
+
+
+    {% block page %}{% endblock %}
+
+    {% include "../inc/main/footer.twig" %}
+    <div class="w-100 bg-white text-center position-sticky bottom-0 d-block d-lg-none border-top border-grey_20 menu_bar-modile">
+        <div class="w-100 d-flex justify-content-around align-items-center p-4">
+            {% include "../inc/main/icon_navigation_bar.twig" %}
+        </div>
+    </div>
+</div>
+
+<script src="./js/app.min.js"></script>
+
+</body>
+</html>

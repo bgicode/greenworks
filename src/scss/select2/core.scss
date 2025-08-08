@@ -1,0 +1,60 @@
+.select2-container {
+  box-sizing: border-box;
+  width: 100% !important;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  &:after {
+    content: '';
+    width: 8px;
+    height: 5px;
+    position: absolute;
+    top: 45%;
+    right: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewBox="0 0 8 5" fill="none"><path d="M0.502372 0H7.05315C7.27321 0 7.42555 0.110026 7.51018 0.330078C7.59482 0.533203 7.56097 0.710938 7.40862 0.863281L4.13323 4.13867C4.03167 4.24023 3.91318 4.29102 3.77776 4.29102C3.64235 4.29102 3.52386 4.24023 3.42229 4.13867L0.146903 0.863281C-0.00544085 0.710938 -0.039295 0.533203 0.0453404 0.330078C0.129976 0.110026 0.28232 0 0.502372 0Z" fill="%23878A99"/></svg>');
+  }
+  @import "single";
+  @import "multiple";
+}
+
+@import "dropdown";
+
+.select2-close-mask {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  min-height: 100%;
+  min-width: 100%;
+  height: auto;
+  width: auto;
+  opacity: 0;
+  z-index: 99;
+
+  // styles required for IE to work
+
+  background-color: #fff;
+  filter: alpha(opacity=0);
+}
+
+.select2-hidden-accessible {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+@import "theme/default/layout";
+@import "theme/classic/layout";

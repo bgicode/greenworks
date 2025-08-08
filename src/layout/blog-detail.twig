@@ -1,0 +1,132 @@
+{% extends 'templates/base.twig' %}
+{% set title = 'Блог детальная' %}
+
+{% block page %}
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12  col-xl-2">
+                {% include '/inc/catalog/catalog_sitebar_sm.twig' %}
+            </div>
+            <div class="col-12 col-xl-10">
+                <div class="my-5">
+
+                    {% include '/inc/main/breadcrumbs.twig' %}
+                </div>
+
+
+                <div class="mb-10">
+                    <img src="./img/blog/blog_detail.png" alt="" class="w-100 rounded">
+                </div>
+
+                <div>
+                    <div class="col-12 col-lg-8">
+                        <h1 class="fs-12 mb-2">
+                            Стартуем с выгодой: получите промокод за отзыв о товарах
+                        </h1>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <div class="fs-3">
+                            17 июля 2024
+                        </div>
+                        <div class="fs-3">
+                            Автор
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-7">
+                    <p>
+                        Оставьте на нашем сайте отзывы на любые товары от бренда START с 7 мая по 7 июня 2025 года. <br>
+                        От одного участника учитывается до 5 отзывов на разные товары – за каждый начисляется промокод
+                        на 200 р. Их номиналы суммируются. <br>
+                        Максимальная сумма, которую можно получить, – 1 000 р. <br>
+                        17 июня 2025 года мы подведем итоги. Каждый участник получит промокод на почту, указанную при
+                        авторизации.
+                    </p>
+                    <br>
+                    <h2>
+                        Как оставить отзыв
+                    </h2>
+                    <p>
+                        Авторизуйтесь на сайте. Укажите актуальную почту – на нее придет промокод. <br>
+                        Найдите товар, о котором хотите написать отзыв: через поиск на сайте, в истории заказов или в
+                        каталоге START.
+                        <br>
+                        Откройте страницу товара и перейдите на вкладку «Отзывы». <br>
+                        Нажмите «Написать отзыв», заполните форму и отправьте отзыв, нажав соответствующую кнопку.
+                    </p>
+                    <br>
+                    <h2>
+                        Что написать в отзыве
+                    </h2>
+                    <ul>
+                        <li>
+                            Расскажите, для чего заказывали товар и как его используете.
+                        </li>
+                        <li>
+                            Отметьте преимущества, которые оценили в работе.
+                        </li>
+                        <li>
+                            Опишите особенности функций товара.
+                        </li>
+                        <li>
+                            Оставьте советы другим пользователям.
+                        </li>
+                        <li>
+                            Приложите фото товара и/или видео – это необязательно, но будет большим плюсом.
+                        </li>
+                    </ul>
+                    <p>
+                        Модератор вправе отклонить отзыв, если его содержание противоречит условиям публикации на сайте.
+                        Проверка занимает до 3 рабочих дней.
+                    </p>
+                    <br>
+                    <br>
+
+                    <img src="./img/blog/blog_detail_2.png" alt="" class="w-100 rounded">
+
+                    <br>
+                    <br>
+                    <p>
+                        Организатор акции вправе изменить условия, в том числе сроки действия, перечень
+                        товаров-участников и другое, в любое время без предварительного уведомления участников акции.
+                    </p>
+                </div>
+
+                <div class="my-8 bg-light p-5">
+                    Поделиться
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="my-15">
+            <div class="d-flex my-8 align-items-center gap-5">
+                <div class="fs-12 fw-semibold mb-1">
+                    Похожие статьи
+                </div>
+            </div>
+            <div class="swiper" id="swiperBlogList">
+                <div class="swiper-wrapper">
+                    {% for i in 0..4 %}
+                        <div class="swiper-slide">
+                            {% include '/inc/blog/blog_preview.twig' %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="my-8 d-flex justify-content-center">
+                <a href="/blog.html" class="btn btn-outline-dark rounded rounded-sm p-4 px-5">
+                    Читать все
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    {% include '/inc/callback/email.twig' %}
+
+{% endblock %}

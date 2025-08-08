@@ -1,0 +1,58 @@
+{% extends "templates/base.twig" %}
+
+{% set title = "Каталог раздел" %}
+
+{% block page %}
+    <div class="container">
+        <div class="row">
+
+            {# <div class="col-12  col-xl-2">
+                
+            </div> #}
+            {% include '/inc/catalog/catalog_sitebar.twig' %}
+            <div class="col-12 col-xl-10">
+                <div class="my-5">
+                    {% include '/inc/main/breadcrumbs.twig' %}
+                </div>
+
+                {% set categoryList = [
+                    'Газонокосилки',
+                    'Триммеры',
+                    'Снегоуборочная техника',
+                    'Цепные пилы',
+                    'Кусторезы и высоторезы',
+                    'Воздуходувки и пылесосы',
+                    'Мойки, насосы и компрессоры',
+                    'Аэраторы и скарификаторы',
+                    'Культиваторы',
+                    'Садовые тракторы',
+                    'Лодочные моторы',
+                    'Техника для сада',
+                    'Ручной инструмент',
+                    'Аккумуляторы и зарядные устройства',
+                    'Товары для отдыха и туризма'
+                ] %}
+                <div class="row row-gap-8">
+                    {% for key, val in categoryList %}
+                        <div class="col-4 col-md-3">
+                            <a href="/catalog-section.html"
+                               class="link-dark d-flex gap-3 flex-column fs-4 fs-lg-7 text-decoration-none">
+                                <div class="bg-light catalog-section-preview p-2">
+                                    <img src="/img/catalog/section_{{ key }}.png" alt="">
+                                </div>
+                                <span class="text-uppercase fw-semibold">
+                                        {{ val }}
+                                    </span>
+                            </a>
+                        </div>
+                    {% endfor %}
+
+                </div>
+
+                {% include '/inc/catalog/catalog_footer.twig' %}
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

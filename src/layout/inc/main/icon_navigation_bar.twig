@@ -1,0 +1,27 @@
+
+    {% set menuTop = [
+        { title: 'Вход/<br>регистрация', url: '/user-registration.html', counter: false, img: "./img/main/icons/personal.svg" },
+        { title: 'Сравнение', url: '#', counter: true, img: "./img/main/icons/comparison.svg" },
+        { title: 'Избранное', url: '#', counter: true, img: "./img/main/icons/favorites.svg" },
+        { title: 'В корзине<br>пока пусто', url: '/basket.html', counter: true, img: "./img/main/icons/backet.svg" }
+    ] %}
+
+    {% for item in menuTop %}
+        <div class="d-flex justify-content-between align-items-center">
+            <a class="d-flex justify-content-between align-items-center text-decoration-none color_grey_40" href="{{item.url}}">
+                <div class="h-100 p-3 me-1 position-relative">
+                <img src="{{ item.img }}" alt="">
+                {% if item.counter %}
+                    <div class="counter rounded-5 fs-2 ">
+                        33
+                    </div>
+                {% endif %}
+                
+                </div>
+                <span class="d-none d-lg-block">{{ item.title }}</span>
+            </a>                      
+            
+        </div>
+        
+    {% endfor %}
+

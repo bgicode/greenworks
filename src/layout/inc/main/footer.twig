@@ -1,0 +1,80 @@
+
+<footer class="w-100 bg_grey_dark">
+    <div class="container pt-11 pb-13">
+        <div class="row w-100 d-flex justify-content-around">
+            <div class="col-lg-2  col-md-12 row">
+                <div class="col-7 col-lg-10 col-md-4">
+                    <img class="footer__img w-100" src="/img/main/logo_white.svg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8 row">
+                <div class="col-12 color_grey_60 mb-2 py-4 fw-semibold fs-4">                    
+                    КАТАЛОГ
+                </div>
+
+                {% set menuBot = [
+                    [
+                        { title: 'Газонокосилки', url: '#'},
+                        { title: 'Триммеры', url: '#'},
+                        { title: 'Снегоуборочная техника', url: '#'},
+                        { title: 'Цепные пилы', url: '#'},
+                        { title: 'Кусторезы и высоторезы', url: '#'},
+                        { title: 'Воздуходувки и пылесосы', url: '#'},
+                        { title: 'Мойки, насосы и компрессоры', url: '#'},
+                        { title: 'Аэраторы и скарификаторы', url: '#'}
+                    ],
+                    [
+                        { title: 'Культиваторы', url: '#'},
+                        { title: 'Садовые тракторы', url: '#'},
+                        { title: 'Лодочные моторы', url: '#'},
+                        { title: 'Техника для сада', url: '#'},
+                        { title: 'Ручной инструмент', url: '#'},
+                        { title: 'Аккумуляторы и зарядные устройства', url: '#'},
+                        { title: 'Системы полива Hozelock', url: '#'},
+                        { title: 'Товары для отдыха и туризма', url: '#'}
+                    ],
+                    [
+                        { title: 'Аксессуары', url: '#'},
+                        { title: 'Запчасти', url: '#'},
+                        { title: 'Подарочный сертификат', url: '#'},
+                        { title: 'Распродажи и скидки', url: '#'},
+                        { title: 'Новинки', url: '#'},
+                        { title: 'Популярные товары', url: '#'},
+                        { title: 'Рекомендуемые товары', url: '#'},
+                        { title: 'Уцененные товары', url: '#'}
+                    ]
+                ] %}
+
+                {% for menuSection in menuBot %}
+                    <div class="col-lg-4">
+                        {% for item in menuSection %}
+                            <div class="pt-3">
+                                <a href="{{ item.url }}" class="text-decoration-none text-white fs-4">{{ item.title }}</a>
+                            </div>                           
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+                
+            </div>
+            <div class="col-lg-2 col-md-4 d-flex flex-column">
+                <div class="text-white fs-5 mb-4 mt-14">
+                    <div>info@mail.ru</div>
+                    <div>+7 (888) 888-88-88</div>
+                </div>
+                <div class="d-flex">
+                    <div class="rounded-5 bg-primary p-3 align-items-center me-2">
+                        <img src="/img/main/icons/message.svg" alt="">
+                    </div>
+                    <div class="rounded-5 bg-primary p-3 align-items-center">
+                        <img src="/img/main/icons/phone_white.svg" alt="">
+                    </div>
+                </div>
+                <div class="mt-auto">
+                    <a href="" class="text-decoration-none fs-3 color_grey_60">Политика конфиденциальности</a>
+                    <a href="" class="text-decoration-none fs-3 color_grey_60">Офферта</a>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+</footer>

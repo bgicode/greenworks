@@ -1,0 +1,32 @@
+{
+  "main": "gulpfile.js",
+  "scripts": {},
+  "devDependencies": {
+    "autoprefixer": "^10.4.4",
+    "browser-sync": "^3.0.3",
+    "concurrently": "^9.1.0",
+    "gulp": "^5.0.0",
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-less": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-ttf2woff": "^2.0.0",
+    "gulp-ttftowoff2": "^1.0.1",
+    "gulp-twig": "^1.2.0",
+    "gulp-uglify-es": "^3.0.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.83.4"
+  },
+  "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "bootstrap": "^5.3.3",
+    "imask": "^7.6.1",
+    "jquery": "^3.7.1",
+    "nouislider": "^15.8.1",
+    "select2": "^4.1.0-rc.0",
+    "swiper": "^11.2.6"
+  }
+}

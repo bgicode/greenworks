@@ -1,0 +1,157 @@
+<div class="text-white bg-primary fw-bold py-3  text-center fs-5">
+    <div class="container fw-semibold">
+        30% на первый заказ для бизнеса!
+    </div>
+</div>
+<header>
+    {% set menuTop = [
+        { title: 'Владимир', url: '#', type: 'btn' },
+        { title: 'О компании', url: '#', type: 'link' },
+        { title: 'Оптовикам и юрлицам', url: '#', type: 'link' },
+        { title: 'Отзывы', url: '#', type: 'link' },
+        { title: 'ВЕСЬ АССОРТИМЕНТ БРЕНДА', url: '#', type: 'list' },
+        { title: '% Акции', url: '#', type: 'btn2' },
+        { title: 'Гарантии и ремонт', url: '#', type: 'link' },
+        { title: 'Доставка и оплата', url: '#', type: 'link'},
+        { title: 'Контакты', url: '#', type: 'link' }
+    ] %}
+
+    <div class="bg_grey_80 d-none d-lg-block">
+        <div class="container">
+            <div class="text-white first_menu px-4">
+                <div class="row align-items-center">
+                    <div class="col-md-12 p-2">
+                        <div class="d-flex justify-content-between align-items-center fs-4">
+                            {% for item in menuTop %}
+                                {% if item.type == 'btn' %}
+                                    <div class="text-white lh-lg d-flex justify-content-between align-items-center"><img class="me-1" src="/img/main/geo_pin.svg"><span>{{ item.title }}</span></div>
+                                {% elseif item.type == 'link' %}
+                                    <a href="{{ item.url }}" class="text-decoration-none text-white lh-lg">{{ item.title }}</a>
+                                {% elseif item.type == 'btn2' %}
+                                    <div class="bg-primary text-white lh-lg rounded-1 px-3"><a class="text-white text-decoration-none" href="{{ item.url }}">{{ item.title }}</a></div>
+                                {% else %}                
+                                    <div class="dropdown p-0 text-white d-flex justify-content-between align-items-center">
+                                            <div class="dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                                {# <span class="me-1">
+                                                    
+                                                </span> #}
+                                                {{ item.title }}
+                                                <img src="/img/main/caret-left-fill.svg">
+                                            </div>
+                                            <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+                                                <li><a class="dropdown-item" href="#">Пункт 1</a></li>
+                                                <li><a class="dropdown-item" href="#">Пункт 2</a></li>
+                                                <li><a class="dropdown-item" href="#">Пункт 3</a></li>
+                                                <li><hr class="dropdown-divider"></li>
+                                                <li><a class="dropdown-item" href="#">Отдельный пункт</a></li>
+                                            </ul>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </div>    
+    
+    <div class="container menu_desktop d-none d-lg-block">
+        <div class="second_menu row py-6 px-3">
+            <div class="col-7 d-flex justify-content-between align-items-center gap-10 p-0 ps-2 pe-2">
+
+                <a href="/index.html" class="second_menu__item">
+                    <img src="./img/main/main_logo.png" alt="">
+                </a>
+
+                <div class="second_menu__item d-flex flex-column align-items-center">
+                    <div class="d-flex align-items-center">
+                        <img  src="./img/main/icons/phone.svg" alt="">
+                        <span class="fw-semibold fs-6">+7 (888) 888-88-88</span>
+                    </div >
+                    <div class="color_grey_60 fs-6 lh-sm">Заказать звонок</div>
+                </div>
+
+                <div class="second_menu__item flex-grow-1">
+                    <form class="rounded-2 p-1 h-100 w-100 d-flex justify-content-between border-1 border_color_grey_light" role="search">
+                        <input class="h-100 w-100 border-0" type="search" name="" class="" placeholder="Поиск товара по каталогу">
+                        <button type="submit" class="btn btn-link p-0 border-0 bg-transparent h-100" aria-label="Найти">
+                            <img src="./img/main/icons/button_search.svg" alt="Поиск" width="20" height="20">
+                        </button>
+                    </form>
+                </div>
+                
+            </div>
+            <div class="col-5 d-flex justify-content-between align-items-center p-0">
+                {% include "./icon_navigation_bar.twig" %}
+            </div>
+            {# <div class="col-5 d-flex justify-content-between align-items-center p-0">
+                {% set menuTop = [
+                    { title: 'Вход/<br>регистрация', url: '#', counter: false, img: "./img/main/icons/personal.svg" },
+                    { title: 'Сравнение', url: '#', counter: true, img: "./img/main/icons/comparison.svg" },
+                    { title: 'Избранное', url: '#', counter: true, img: "./img/main/icons/favorites.svg" },
+                    { title: 'В корзине<br>пока пусто', url: 'basket.html', counter: true, img: "./img/main/icons/backet.svg" }
+                ] %}
+
+                {% for item in menuTop %}
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a class="d-flex justify-content-between align-items-center text-decoration-none color_grey_40" href="{{item.url}}">
+                            <div class="h-100 p-3 me-1 position-relative">
+                            <img src="{{ item.img }}" alt="">
+                            {% if item.counter %}
+                                <div class="counter rounded-5 fs-2">
+                                    33
+                                </div>
+                            {% endif %}
+                            
+                            </div>
+                            <span>{{ item.title }}</span>
+                        </a>                      
+                        
+                    </div>
+                    
+                {% endfor %}
+
+            </div> #}
+
+        </div>      
+    </div >
+
+    <div class="container menu_mobile bg-white d-block d-lg-none pb-4">
+        <div class="row py-2 px-4">
+            <div class="col-12 d-flex justify-content-between align-items-center position-relative">
+                <a href="/index.html" class="second_menu__item">
+                    <img src="./img/main/main_logo.png" alt="">
+                </a>
+                <div class="d-flex justify-content-end">
+                    <div class="lh-lg d-flex justify-content-between text-grey align-items-center me-20">
+                        <img class="me-1" src="/img/main/geo_pin_grey.svg">
+                        <span class="geo_mobile">Владимир</span>
+                    </div>
+                    <div class="position-absolute menu_mob-wrap bg-white top-0 end-0 z-3">
+                        {% include '../catalog/catalog_sitebar_mob.twig' %}
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="second_menu__item gap-20 px-4 d-flex justify-content-between align-items-center">
+            <form class="rounded-2 p-1 h-100 flex-grow-1 d-flex justify-content-between border-1 border_color_grey_light" role="search">
+                <input class="h-100 w-100 border-0" type="search" name="" class="" placeholder="Поиск товара по каталогу">
+                <button type="submit" class="btn btn-link p-0 border-0 bg-transparent h-100" aria-label="Найти">
+                    <img src="./img/main/icons/button_search.svg" alt="Поиск" width="20" height="20">
+                </button>
+            </form>
+
+            <div class="d-flex">
+                <div class="rounded-5 bg-primary p-3 align-items-center me-2">
+                    <img src="/img/main/icons/message.svg" alt="">
+                </div>
+                <div class="rounded-5 bg-primary p-3 align-items-center">
+                    <img src="/img/main/icons/phone_white.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</header>
+
