@@ -6,23 +6,23 @@
                      class="w-100">
 
                 <div class="position-absolute d-flex flex-column gap-1 z-3" style="top: 0; left: 0">
-                    <div class="p-2 px-4 bg-secondary text-white border rounded-5 fs-3 text-uppercase fw-medium"
+                    <div class="p-2 px-4 bg-secondary text-white border rounded-5 fs-3 fs-sm-3 text-uppercase fw-medium"
                          style="width: fit-content">
                         Популярное
                     </div>
-                    <div class="p-2 px-4 text-white bg-primary rounded-5 fs-3 text-uppercase fw-medium"
+                    <div class="p-2 px-4 text-white bg-primary d-none d-md-block rounded-5 fs-3 text-uppercase fw-medium"
                          style="width: fit-content">
                         Рекомендуем
                     </div>
                 </div>
 
                 <div class="position-absolute d-flex flex-column gap-2  z-3" style="top: 0em; right: 0em">
-                    <div class="bg-primary p-2 px-3 fw-medium fs-6 text-white rounded-circle">
+                    <div class="bg-primary p-2 px-3 fw-medium fs-3 fs-sm-3 fs-md-6 text-white rounded-circle">
                         %
                     </div>
                 </div>
 
-                <div class="position-absolute align-items-center d-flex gap-2 z-3" style="left: 0; bottom: 0">
+                <div class="position-absolute align-items-center d-none d-sm-flex gap-2 z-3" style="left: 0; bottom: 0">
                     <div class="d-flex gap-1">
                         <img src="./img/catalog/product_preview_icon_1.svg" alt="">
                         <img src="./img/catalog/product_preview_icon_2.svg" alt="">
@@ -33,7 +33,7 @@
 
                 </div>
             </a>
-            <div class="d-flex fs-3 my-5 justify-content-between">
+            <div class="d-flex fs-3 my-5 d-none d-sm-flex justify-content-between">
                 <div class="opacity-50">
                     Артикул: 2398766
                 </div>
@@ -44,7 +44,7 @@
 
             <div class="mb-5">
                 <a href="/catalog-detail.html"
-                   class=" fs-6 fw-semibold text-decoration-none my-4 link-dark">
+                   class="fs-4 fs-md-6 fw-semibold text-decoration-none my-4 link-dark">
                     Название в две строки как у большинства продуктов
                 </a>
             </div>
@@ -63,13 +63,13 @@
 
             <div class="bg-light mb-3 rounded position-relative">
             </div>
-            <div class="d-flex justify-content-between align-items-end gap-2">
-                <div class="d-flex flex-column gap-4">
-                    <div class="d-flex align-items-center justify-content-between gap-3 w-100">
-                        <div class="card__price-font fw-semibold">
+            <div class="d-flex justify-content-between align-items-end gap-0 gap-sm-2">
+                <div class="d-flex flex-column gap-4 w-100">
+                    <div class="d-flex align-items-center justify-content-between gap-0 gap-sm-3 w-100">
+                        <div class="card__price-font fs-3 fs-sm-6 fw-semibold">
                             33999 ₽
                         </div>
-                        <div class="d-flex gap-2 justify-content-end fs-7">
+                        <div class="d-flex gap-2 justify-content-end fs-3 fs-sm-6">
                             <div class="bg-primary rounded-1 text-white p-1 py-0">
                                 -30%
                             </div>
@@ -77,12 +77,12 @@
                                 33999 ₽
                             </div>
                         </div>
-
                     </div>
-                    <div class="fs-5 d-flex ms-auto gap-2 align-items-center fw-medium">
+                    <div class="fs-5 ms-auto gap-2 align-items-center fw-medium d-none d-sm-flex">
                         <div class="bg-light p-2 rounded-1 card__price-font2">
                             33999 ₽
                         </div>
+
                         <div class="fs-2 opacity-75">
                             х 4 платежа в рассрочку без переплат
                         </div>
@@ -92,6 +92,17 @@
                             <i class="theme-icon theme-icon_bonus"></i> <span
                                     class="fs-2 opacity-75">1938 ₽ на счет</span>
                         </div>
+                    </div>
+                    <div class="d-flex d-md-none rounded  bg-primary color-white" data-count="group" data-maxcount="99">
+
+                        <button class="text-center fs-4 py-4 w-100 btn btn-primary text-white" data-catalog-action="add2basket"
+                                data-add2basket-count="1">
+                            В корзину
+                        </button>
+
+                    </div>
+                    <div class="d-block d-sm-none fs-2 opacity-75">
+                        х 4 платежа в рассрочку без переплат
                     </div>
                 </div>
 
@@ -124,7 +135,7 @@
                         }
                     ] %}
                     {% for key,val in arrBtn %}
-                        <div class="col-6 p-1">
+                        <div class="сol-12 col-sm-6 p-1">
                             <input type="radio" name="options-base" class="btn-check" id="btn-check-outlined_{{ key }}"
                                    autocomplete="off" {% if key == 0 %} checked {% endif %}>
                             <label class="btn text-center p-2 fs-3 btn-outline-primary btn-outline-primary--no-bg "

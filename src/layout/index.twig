@@ -10,7 +10,7 @@
             
             {% include '/inc/catalog/catalog_sitebar.twig' %}
             
-            <div class="col-12 col-xl-10">
+            <div class="col-12 col-xl-9">
 
                 {# <div class="swiper my-4 w-100" id="swiperSliderHomeMain">
 
@@ -127,7 +127,7 @@
                                 <div class="series-icon">
                                     <img src="/img/catalog/series/series_{{ key }}.png" alt="">
                                 </div>
-                                <div class="fs-7">
+                                <div class="fs-3 fs-sm-7 text-md-start text-center">
                                     {{ val.name }}
                                 </div>
                             </a>
@@ -136,13 +136,11 @@
 
                 </div>
 
-
-                <div class="fs-19 my-5 text-uppercase fw-semibold">
+                <div class="fs-11 fs-sm-19 my-5 text-uppercase fw-semibold">
                     Присмотритесь к этим предложениям
                 </div>
                 <div role="tabpanel">
-
-                        <div class="d-flex my-5 gap-3 border-0 nav nav-tabs">
+                        <div class="d-flex my-5  border-0 g-3 nav nav-tabs row">
                             {% set sections = [
                                 { 'title': 'Хиты продаж', 'active': true },
                                 { 'title': 'Скидки', 'active': false },
@@ -150,12 +148,15 @@
                                 { 'title': 'Рекомендации', 'active': false }
                             ] %}
                             {% for key, section in sections %}
-                                    <button class="btn rounded-5 {{ section.active ? ' btn-dark' : ' btn-light' }}"
-                                            data-bs-toggle="tab" href="#list-home_{{ key }}" role="tab"
-                                            aria-controls="list-home_{{ key }}"
-                                            aria-selected="{{ section.active ? 'true' : 'false' }}">
-                                        {{ section.title }}
-                                    </button>
+                                    <div class="col-lg-3 col-md-6">
+                                        <button class="w-100 btn rounded-5 py-3 {{ section.active ? ' btn-dark' : ' btn-light' }}"
+                                                data-bs-toggle="tab" href="#list-home_{{ key }}" role="tab"
+                                                aria-controls="list-home_{{ key }}"
+                                                aria-selected="{{ section.active ? 'true' : 'false' }}">
+                                            {{ section.title }}
+                                        </button>
+                                    </div>
+
                             {% endfor %}
                         </div>
 
@@ -193,55 +194,7 @@
                     </div>
                 </div>
 
-                <div class="my-20">
-                    <div class="fs-19 my-5 text-uppercase fw-semibold">
-                        Преимущества техники Greenworks
-                    </div>
-                    <div class="row row-gap-15" id="swiperSliderHomeAdvantagesText">
-                        {% set items = [
-                            {
-                                'title': 'ЭКОЛОГИЧНАЯ',
-                                'description': 'Аккумулятор подойдет ко <br> всему в пределах серии'
-                            },
-                            {
-                                'title': 'МОЩНАЯ',
-                                'description': 'Составит конкуренцию бензиновому технике'
-                            },
-                            {
-                                'title': 'ЛЕГКАЯ',
-                                'description': 'Маленький вес подойдет даже для женщин'
-                            },
-                            {
-                                'title': 'БЕСШУМНАЯ',
-                                'description': 'Очень тихая в отличие от бензиновых аналогов'
-                            },
-                            {
-                                'title': 'ЭКОЛОГИЧНАЯ',
-                                'description': 'Без вредных испарений и без запаха'
-                            }
-                        ] %}
-
-                            {% for key,val  in items %}
-                                <div class="col-6 col-md-4 col-lg-4">
-                                    <div class="d-flex flex-column flex-lg-row">
-                                        <div>
-                                            <img src="/img/advantages/advantages_{{ key }}.svg" alt="">
-                                        </div>
-                                        <div class="position-relative w-100 px-10">
-                                            <div class="fs-8 text-uppercase fw-semibold mb-1">
-                                                {{ val.title }}
-                                            </div>
-                                            <div class="fs-5">
-                                                {{ val.description }}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            {% endfor %}
-
-                    </div>
-                </div>
-
+                {% include '/inc/main/advantages.twig' %}
 
                 {% include '/inc/catalog/catalog_footer.twig' %}
 

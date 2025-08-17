@@ -31,6 +31,9 @@ body, html {
 
 }
 
+.template * {
+  z-index: 2;
+}
 
 .theme-icon {
   display: inline-block;
@@ -169,10 +172,14 @@ body, html {
 }
 
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   .hidden-content {
     display: none;
   }
+}
+
+.hidden-content {
+  display: none;
 }
 
 .product-item {
@@ -210,7 +217,7 @@ input:checked+.btn-outline-primary--no-bg {
   position: absolute;
   top: calc(50% - 1em);
   right: 1em;
-  z-index: 99;
+  z-index: 99 !important;
   cursor: pointer;
 }
 
@@ -225,7 +232,7 @@ input:checked+.btn-outline-primary--no-bg {
   position: absolute;
   top: calc(50% - 1em);
   left: 1em;
-  z-index: 99;
+  z-index: 99 !important;
   cursor: pointer;
 }
 
@@ -251,6 +258,7 @@ input:checked+.btn-outline-primary--no-bg {
     height: 100%;
   }
   @media screen and (max-width: 768px) {
+    min-height: auto;
     max-height: 110px;
     height: 110px;
   }
@@ -386,18 +394,44 @@ img {
 }
 
 .menu_bar-modile {
-    z-index: 1030;
+    z-index: 1030 !important;
 }
 
 
-@media screen and (max-width: 992px) {
-    header {
-        position: sticky;
-        top: 0;
-        z-index: 1030;
-    }
+//@media screen and (max-width: 992px) {
+//    header {
+//        position: sticky;
+//        top: 0;
+//        z-index: 1030;
+//    }
+//}
+header {
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1030 !important;
+  isolation: isolate;
 }
 
+//header::after {
+//  content: '';
+//  position: absolute;
+//  bottom: -5px;
+//  left: 0;
+//  right: 0;
+//  height: 5px;
+//  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+//  z-index: -1; /* Помещаем тень под шапку */
+//}
+.header-shadow {
+  position: sticky;
+  top: 0;
+  width: 110%;
+  height: 10px;
+  box-shadow: 0 4px 50px rgba(0, 0, 0, .6);
+  z-index: 1 !important; /* Ниже шапки! */
+  pointer-events: none; /* Игнорирует клики */
+}
 
 
 .carousel-indicators [data-bs-target] {
@@ -469,7 +503,7 @@ img {
 }
 
 .read-all-link {
-    width: 100%;    
+    width: 100%;
     @media screen and (min-width: 768px) {
         width: auto;
     }
@@ -486,3 +520,115 @@ img {
         color: $primary !important;
     }
 }
+
+
+@media (max-width: 767.98px) {
+  .personal_4block-pe-md-0 {
+    padding-right: 0 !important;
+  }
+}
+
+
+
+@media (hover: hover) and (pointer: fine) {
+  .element-copy {
+    position: absolute;
+    z-index: 100 !important;
+    pointer-events: auto;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    transition: opacity 0.2s;
+  }
+}
+
+//корзина
+.btn-icon--minus {
+    background-image: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="7" width="12" height="2" rx="1" fill="white"/></svg>');
+    background-color: $gray-light;
+    color: white;
+}
+
+.btn-icon--plus {
+    background-image: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="0.5" width="2" height="15" rx="1" fill="white"/><rect x="0.5" y="7" width="15" height="2" rx="1" fill="white"/></svg>');
+    background-color: $gray-light;
+    color: white;
+}
+
+.form-check-input.custom-checkbox:checked[type=checkbox] {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="none" stroke="%2300A046" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m6 10 3 3 6-6"/></svg>') !important;
+}
+
+
+.hidden-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkbox-image {
+  display: inline-block;
+  width: 20px;
+  height: 18px;
+  background-image: url('../../src/img/main/icons/Favorite.svg');
+  background-size: cover;
+  cursor: pointer;
+}
+
+.hidden-checkbox:checked + .checkbox-image {
+  background-image: url('../../src/img/main/icons/Favorite_check.svg');
+}
+
+.backet_price {
+  flex-direction: row;
+  @media screen and (min-width: 768px) {
+    flex-direction: row-reverse;
+  }
+}
+
+.gift {
+  width: 26px;
+  height: 26px;
+  text-align: center;
+}
+
+//корзина конец
+
+
+// .form-check-input.custom-checkbox {
+//     border-color: $primary; /* Цвет контура по умолчанию */
+//     background-color: $primary; /* Белый фон */
+// }
+
+//.swiper-slide {
+//  overflow: visible !important; /* Разрешаем показ копии за пределами слайда */
+//}
+//.swiper-wrapper {
+//  z-index: auto !important; /* Отключаем ограничение z-index */
+//}
+
+// личный кабинет свайпер
+.personal__button_prev {
+  background-size: cover;
+  transform: rotate(180deg);
+  background-image: url('../../src/img/main/icons/button_slider.png');
+  width: 42px;
+  height: 42px;
+  top: auto !important;
+  left: auto !important;
+}
+
+.personal__button_next {
+  background-size: cover;
+  background-image: url('../../src/img/main/icons/button_slider.png');
+  width: 42px;
+  height: 42px;
+  top: auto !important;
+  left: auto !important;
+}
+
+//#swiperCatalogListPesr {
+//  width: 90%;
+//}
+
+

@@ -1,0 +1,48 @@
+<div class="my-20">
+    <div class="fs-10 fs-md-19 my-5 text-uppercase fw-semibold">
+        Преимущества техники Greenworks
+    </div>
+    <div class="row row-gap-5 row-gap-md-15" id="swiperSliderHomeAdvantagesText">
+        {% set items = [
+            {
+                'title': 'ЭКОЛОГИЧНАЯ',
+                'description': 'Аккумулятор подойдет ко <br> всему в пределах серии'
+            },
+            {
+                'title': 'МОЩНАЯ',
+                'description': 'Составит конкуренцию бензиновому технике'
+            },
+            {
+                'title': 'ЛЕГКАЯ',
+                'description': 'Маленький вес подойдет даже для женщин'
+            },
+            {
+                'title': 'БЕСШУМНАЯ',
+                'description': 'Очень тихая в отличие от бензиновых аналогов'
+            },
+            {
+                'title': 'ЭКОЛОГИЧНАЯ',
+                'description': 'Без вредных испарений и без запаха'
+            }
+        ] %}
+
+        {% for key,val  in items %}
+            <div class="col-6 col-md-4 col-lg-4">
+                <div class="d-flex flex-column flex-lg-row">
+                    <div class="px-10 px-lg-0 pb-5">
+                        <img src="/img/advantages/advantages_{{ key }}.svg" alt="">
+                    </div>
+                    <div class="position-relative w-100 px-10">
+                        <div class="fs-7 fs-md-8 text-uppercase fw-semibold mb-1">
+                            {{ val.title }}
+                        </div>
+                        <div class="fs-4 fs-md-5">
+                            {{ val.description }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+</div>

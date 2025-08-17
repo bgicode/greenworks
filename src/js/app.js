@@ -178,7 +178,7 @@ let swiperSliderReviews = new Swiper('#swiperSliderReviews', {
 
 
 let swiperCatalogList = new Swiper('#swiperCatalogList', {
-    spaceBetween: 20,
+    spaceBetween: 10,
     slidesPerView: 2,
     loop: true,
     pagination: {
@@ -198,6 +198,41 @@ let swiperCatalogList = new Swiper('#swiperCatalogList', {
         }
     }
 
+});
+
+let swiperCatalogListPesr = new Swiper('#swiperCatalogListPesr', {
+    spaceBetween: 20,
+    slidesPerView: 2,
+    loop: true,
+    pagination: {
+        type: 'bullets',
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 2
+        },
+        768: {
+            slidesPerView: 2
+        },
+        1024: {
+            slidesPerView: 3
+        }
+    }
+
+});
+
+$(document).ready(function(){
+	$('.js-chosen').chosen({
+		width: '30%',
+		no_results_text: 'Совпадений не найдено',
+		placeholder_text_single: 'Выберите город'
+	});
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -250,4 +285,149 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+
+    // const originalElements = document.querySelectorAll('.your-original-class');
+    // const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    // const vieportWith = window.innerWidth;
+    // console.log(vieportWith);
+    //
+    // function updateClonePosition(original, clone) {
+    //     const rect = original.getBoundingClientRect();
+    //     const scrollX = window.pageXOffset || document.documentElement.scrollLeft;
+    //     const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    //
+    //     clone.style.left = `${rect.left + scrollX}px`;
+    //     clone.style.top = `${rect.top + scrollY}px`;
+    //     clone.style.width = `${rect.width}px`;
+    //     clone.style.height = `${rect.height}px`;
+    // }
+    //
+    // if (!isTouchDevice && vieportWith > 768) {
+    //     originalElements.forEach(element => {
+    //         let clone = null;
+    //
+    //         const createClone = () => {
+    //             // Создаём копию
+    //             clone = element.cloneNode(true);
+    //             clone.classList.add('element-copy');
+    //             document.body.appendChild(clone);
+    //
+    //             // Позиционируем
+    //             updateClonePosition(element, clone);
+    //
+    //             // Обработчики для клона
+    //             clone.addEventListener('mouseleave', removeClone);
+    //             window.addEventListener('scroll', scrollHandler);
+    //         };
+    //
+    //         const removeClone = () => {
+    //             if (clone) {
+    //                 clone.removeEventListener('mouseleave', removeClone);
+    //                 clone.remove();
+    //                 clone = null;
+    //                 window.removeEventListener('scroll', scrollHandler);
+    //             }
+    //         };
+    //
+    //         const scrollHandler = () => {
+    //             if (clone) updateClonePosition(element, clone);
+    //         };
+    //
+    //         // Оригинальные обработчики
+    //         element.addEventListener('mouseenter', createClone);
+    //         element.addEventListener('mouseleave', function(e) {
+    //             // Проверяем, перешёл ли курсор на клон
+    //             if (!clone || !clone.contains(e.relatedTarget)) {
+    //                 removeClone();
+    //             }
+    //         });
+    //     });
+    // }
+
+
+    const originalElements = document.querySelectorAll('.your-original-class');
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    const viewportWidth = window.innerWidth;
+
+    function updateClonePosition(original, clone) {
+        const rect = original.getBoundingClientRect();
+        const scrollX = window.pageXOffset || document.documentElement.scrollLeft;
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+        clone.style.left = `${rect.left + scrollX}px`;
+        clone.style.top = `${rect.top + scrollY}px`;
+        clone.style.width = `${rect.width}px`;
+        clone.style.height = `${rect.height}px`;
+    }
+
+    if (!isTouchDevice && viewportWidth > 768) {
+        // Увеличиваем z-index кнопок Swiper
+        const swiperButtons = document.querySelectorAll('.swiper-button-prev, .swiper-button-next');
+        swiperButtons.forEach(button => {
+            button.style.zIndex = '1000';
+        });
+
+        originalElements.forEach(element => {
+            let clone = null;
+
+            const createClone = () => {
+                // Создаём копию с пониженным z-index
+                clone = element.cloneNode(true);
+                clone.classList.add('element-copy');
+                clone.style.zIndex = '100'; // Ниже чем у кнопок Swiper
+                document.body.appendChild(clone);
+
+                // Позиционируем
+                updateClonePosition(element, clone);
+
+                // Обработчики для клона
+                clone.addEventListener('mouseleave', removeClone);
+                window.addEventListener('scroll', scrollHandler);
+            };
+
+            const removeClone = () => {
+                if (clone) {
+                    clone.removeEventListener('mouseleave', removeClone);
+                    clone.remove();
+                    clone = null;
+                    window.removeEventListener('scroll', scrollHandler);
+                }
+            };
+
+            const scrollHandler = () => {
+                if (clone) updateClonePosition(element, clone);
+            };
+
+            // Оригинальные обработчики
+            element.addEventListener('mouseenter', createClone);
+            element.addEventListener('mouseleave', function(e) {
+                if (!clone || !clone.contains(e.relatedTarget)) {
+                    removeClone();
+                }
+            });
+        });
+    }
+
+    //тень под хедер
+    const header = document.querySelector('header');
+    const shadow = document.querySelector('.header-shadow');
+
+    function updateShadowPosition() {
+        const headerHeight = header.offsetHeight;
+        const shadowHeight = shadow.offsetHeight;
+        shadow.style.top = `${headerHeight - shadowHeight}px`;
+    }
+
+    // Первоначальная установка
+        updateShadowPosition();
+
+    // Если шапка может менять размер (например, при ресайзе)
+        window.addEventListener('resize', updateShadowPosition);
+
+    // Если контент шапки динамический (например, загрузка данных)
+        new MutationObserver(updateShadowPosition).observe(header, {
+            childList: true,
+            subtree: true,
+        });
+    //конец тень под хедер
 });

@@ -6,10 +6,10 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-12  col-xl-2">
-                {% include '/inc/catalog/catalog_sitebar_sm.twig' %}
-            </div>
-            <div class="col-12 col-xl-10">
+
+            {% include '/inc/catalog/catalog_sitebar_sm.twig' %}
+
+            <div class="col-12 col-xl-9">
                 <div class="my-5">
 
                     {% include '/inc/main/breadcrumbs.twig' %}
@@ -124,9 +124,9 @@
                 </a>
             </div>
         </div>
-
+        {% include '/inc/callback/email.twig' %}
     </div>
 
-    {% include '/inc/callback/email.twig' %}
+
 
 {% endblock %}

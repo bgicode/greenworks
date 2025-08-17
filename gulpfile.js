@@ -59,6 +59,7 @@ function style() {
     return src([
         npmPath + '/@fancyapps/fancybox/dist/jquery.fancybox.css',
         npmPath + '/swiper/swiper-bundle.min.css',
+        npmPath + '/chosen-js/chosen.min.css',
         path.src.css
 
     ])
@@ -106,6 +107,7 @@ function scripts() {
         npmPath + '/select2/dist/js/select2.full.js',
         npmPath + '/nouislider/dist/nouislider.js',
         npmPath + '/swiper/swiper-bundle.min.js',
+        npmPath + '/chosen-js/chosen.jquery.min.js',
 
         path.src.js
     ])

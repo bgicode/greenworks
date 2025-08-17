@@ -1,0 +1,200 @@
+{% extends "templates/base.twig" %}
+
+{% set title = "Личный кабинет" %}
+
+{% block page %}
+
+    <div class="container">
+        <div class="row">
+
+
+            {% include '/inc/catalog/catalog_sitebar_sm.twig' %}
+
+            <div class="col-12 col-xl-9">
+                <div class="my-5">
+                    {% include '/inc/main/breadcrumbs.twig' %}
+
+                    <h1 class="fs-19 my-5 text-uppercase fw-semibold">
+                        Личный кабинет
+                    </h1>
+                    <div class="col-12 col-lg-7">
+                        <div class="my-10">
+                            <p>
+                                Здравствуйте, добро пожаловать в Ваш личный кабинет.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row g-5">
+
+                            <div class="personal__data col-6 col-lg-4 col-md-6 d-flex">
+                                <div class="personal_content bg-light p-7 rounded-2 w-100">
+                                    <div class="fs-8 fw-semibold">Личные данные</div>
+                                    <div class="fs-4 text-grey my-4">тел.: +7 950-****773</div>
+                                    <div class="fs-4 fw-semibold">Изменить >></div>
+                                </div>
+                            </div>
+
+                            <div class="personal__discounts col-6 col-lg-4 col-md-6 d-flex">
+                                <div class="personal_content bg-light p-7 w-100 rounded-2">
+                                    <div class="fs-8 fw-semibold">Скидки</div>
+                                    <div class="fs-4 text-grey my-4">У Вас пока нет ни одной скидки</div>
+                                </div>
+                            </div>
+
+                            <div class="personal__bonus col-lg-4 col-6 col-md-6 d-flex">
+                                <div class="personal_content bg-light w-100 p-7 rounded-2">
+                                    <div class="fs-8 fw-semibold">Баланс Бонусных рублей</div>
+                                    <div class="fs-4 text-grey my-4">Владелец карты<br>Номер карты</div>
+                                    <div class="fs-4 fw-semibold">Баланс и детализация >></div>
+                                    <div class="fs-4 fw-semibold">Условия программы >></div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-6 col-md-6 d-flex flex-column gap-5 align-items-stretch">
+                                <div class="personal__favorites flex-grow-1 h-100 d-flex">
+                                    <div class="personal_content bg-light p-7 rounded-2 w-100">
+                                        <div class="fs-8 fw-semibold">Избранное (0)</div>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 h-100 d-flex">
+                                    <div class="personal_content bg-light p-7 rounded-2 w-100">
+                                        <div class="fs-8 fw-semibold">Рассылки</div>
+                                        <div class="fs-4 text-grey my-4">SMS-уведомления: Только<br>информация о Бонусном счёте</div>
+                                        <div class="fs-4 fw-semibold">Изменить >></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="personal__history col-12 col-lg-8 col-md-12 d-flex">
+                                <div class="personal_content bg-light w-100 p-7 rounded-2">
+                                    <div class="fs-8 fw-semibold">История покупок</div>
+
+                                    <div class="row col-12 mt-8">
+                                        <a class="col-2 d-block rounded-2 overflow-hidden" href="/catalog-detail.html">
+                                            <img class="rounded-2 w-100 h-auto object-fit-cover"
+                                                 src="/img/catalog/product_preview.png"
+                                                 alt="">
+                                        </a>
+                                        <div class="col-8">
+                                            <div class="text-primary fs-3">Заказ выполнен</div>
+                                            <a href="/catalog-detail.html"
+                                               class="align-items-center my-2 d-block fw-semibold text-decoration-none link-dark fs-5">
+                                                Цепная мини пила аккумуляторная Greenworks G24MCS10 Арт.
+                                                2008207,
+                                                24V, 10см, без АКБ и ЗУ в сумке
+                                            </a>
+                                            <div class="text-grey fs-3">от 15.04.2025</div>
+
+                                        </div>
+                                        <div class="col-2 p-0 text-right d-flex justify-content-end">
+                                            <div class="text-primary text-right fw-semibold fs-5">33999 ₽</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row col-12 mt-8">
+                                    <a class="col-2 d-block rounded-2 overflow-hidden" href="/catalog-detail.html">
+                                        <img class="rounded-2 w-100 h-auto object-fit-cover"
+                                             src="/img/catalog/product_preview.png"
+                                             alt="">
+                                    </a>
+                                    <div class="col-8">
+                                        <div class="text-primary fs-3">Заказ выполнен</div>
+                                        <a href="/catalog-detail.html"
+                                           class="align-items-center my-2 d-block fw-semibold text-decoration-none link-dark fs-5">
+                                            Цепная мини пила аккумуляторная Greenworks G24MCS10 Арт.
+                                            2008207,
+                                            24V, 10см, без АКБ и ЗУ в сумке
+                                        </a>
+                                        <div class="text-grey fs-3">от 15.04.2025</div>
+
+                                    </div>
+                                    <div class="col-2 p-0 text-right d-flex justify-content-end">
+                                        <div class="text-primary text-right fw-semibold fs-5">33999 ₽</div>
+                                    </div>
+                                </div>
+
+                                    <div class="col-12 row">
+                                        <div class="col-2"></div>
+                                        <div class="col-8">
+                                            <div class="mt-7 fw-semibold">Развернуть >></div>
+                                        </div>
+                                        <div class="col-2"></div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        <div class="fs-19 mt-10 text-uppercase fw-semibold">
+                            Присмотритесь к этим предложениям
+                        </div>
+
+
+
+                       <div class="">
+                        <div role="tabpanel">
+                            <div class="d-flex my-5  border-0 g-3 nav nav-tabs row">
+                                {% set sections = [
+                                    { 'title': 'Похожие', 'active': true },
+                                    { 'title': 'Просмотренные', 'active': false },
+                                    { 'title': 'Хиты продаж', 'active': false },
+                                    { 'title': 'Скидки', 'active': false }
+                                ] %}
+                                {% for key, section in sections %}
+                                    <div class="col-lg-3 col-6">
+                                        <button class="w-100 btn rounded-5 py-3 {{ section.active ? ' btn-dark' : ' btn-light' }}"
+                                                data-bs-toggle="tab" href="#list-home_{{ key }}" role="tab"
+                                                aria-controls="list-home_{{ key }}"
+                                                aria-selected="{{ section.active ? 'true' : 'false' }}">
+                                            {{ section.title }}
+                                        </button>
+                                    </div>
+
+                                {% endfor %}
+                            </div>
+
+                            <div class="tab-content" id="nav-tabContent">
+                                {% for i in 0..3 %}
+                                    <div class="tab-pane fade {{ i == 0 ? 'show active' : '' }}" id="list-home_{{ i }}"
+                                         role="tabpanel" aria-labelledby="list-home_{{ i }}-tab">
+                                        {% include '/inc/catalog/catalog_dt_slider.twig' %}
+{#                                        <div class="d-flex align-items-center">#}
+{#                                            <div class="swiper-button-prev personal__button_prev d-none d-md-block"></div>#}
+{#                                            <div class="swiper " id="swiperCatalogListPesr">#}
+{#                                                <div class="swiper-wrapper">#}
+{#                                                    {% for i in 0..6 %}#}
+{#                                                        <div class="swiper-slide your-original-class">#}
+{#                                                            {% include '/inc/catalog/catalog_item.twig' %}#}
+{#                                                        </div>#}
+{#                                                    {% endfor %}#}
+{#                                                </div>#}
+{#                                                <div class="swiper-pagination position-relative mt-9 d-flex justify-content-between d-md-none"></div>#}
+{#                                            </div>#}
+{#                                            <div class="swiper-button-next personal__button_next d-none d-md-block"></div>#}
+{#                                        </div>#}
+                                    </div>
+                                {% endfor %}
+                                <div class="mt-15 mb-20 text-center">
+                                    <a href="../catalog.html" class="read-all-link btn btn-outline-primary border-black text-black px-7 py-4">
+                                        Смотреть все >
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+        {% include '/inc/callback/email.twig' %}
+
+    </div>
+
+{% endblock %}

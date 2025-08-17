@@ -1,0 +1,14 @@
+<div class="d-flex align-items-center">
+    <div class="swiper-button-prev personal__button_prev d-none d-md-block"></div>
+    <div class="swiper " id="swiperCatalogListPesr">
+        <div class="swiper-wrapper">
+            {% for i in 0..6 %}
+                <div class="swiper-slide your-original-class">
+                    {% include '/catalog_item.twig' %}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination position-relative mt-9 d-flex justify-content-between d-md-none"></div>
+    </div>
+    <div class="swiper-button-next personal__button_next d-none d-md-block"></div>
+</div>

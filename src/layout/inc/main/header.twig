@@ -6,14 +6,14 @@
 <header>
     {% set menuTop = [
         { title: 'Владимир', url: '#', type: 'btn' },
-        { title: 'О компании', url: '#', type: 'link' },
+        { title: 'О компании', url: '/about_us.html', type: 'link' },
         { title: 'Оптовикам и юрлицам', url: '#', type: 'link' },
         { title: 'Отзывы', url: '#', type: 'link' },
         { title: 'ВЕСЬ АССОРТИМЕНТ БРЕНДА', url: '#', type: 'list' },
         { title: '% Акции', url: '#', type: 'btn2' },
         { title: 'Гарантии и ремонт', url: '#', type: 'link' },
         { title: 'Доставка и оплата', url: '#', type: 'link'},
-        { title: 'Контакты', url: '#', type: 'link' }
+        { title: 'Контакты', url: '/contacts.html', type: 'link' }
     ] %}
 
     <div class="bg_grey_80 d-none d-lg-block">
@@ -117,10 +117,10 @@
     </div >
 
     <div class="container menu_mobile bg-white d-block d-lg-none pb-4">
-        <div class="row py-2 px-4">
+        <div class="row py-3 px-4">
             <div class="col-12 d-flex justify-content-between align-items-center position-relative">
                 <a href="/index.html" class="second_menu__item">
-                    <img src="./img/main/main_logo.png" alt="">
+                    <img class="" src="./img/main/main_logo.png" alt="">
                 </a>
                 <div class="d-flex justify-content-end">
                     <div class="lh-lg d-flex justify-content-between text-grey align-items-center me-20">
@@ -134,7 +134,7 @@
                 
             </div>
         </div>
-        <div class="second_menu__item gap-20 px-4 d-flex justify-content-between align-items-center">
+        <div class="second_menu__item gap-20 px-4 d-flex justify-content-between align-items-center pt-2">
             <form class="rounded-2 p-1 h-100 flex-grow-1 d-flex justify-content-between border-1 border_color_grey_light" role="search">
                 <input class="h-100 w-100 border-0" type="search" name="" class="" placeholder="Поиск товара по каталогу">
                 <button type="submit" class="btn btn-link p-0 border-0 bg-transparent h-100" aria-label="Найти">
@@ -154,4 +154,4 @@
     </div>
     
 </header>
-
+<div class="header-shadow"></div>

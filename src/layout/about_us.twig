@@ -1,0 +1,261 @@
+{% extends "templates/base.twig" %}
+
+{% set title = "О нас" %}
+
+{% block page %}
+
+    <div class="container">
+        <div class="row">
+
+
+            {% include '/inc/catalog/catalog_sitebar_sm.twig' %}
+
+            <div class="col-12 col-xl-9">
+                <div class="my-5">
+                    {% include '/inc/main/breadcrumbs.twig' %}
+                    <div class="rounded overflow-hidden">
+                        <img class="object-fit-cover w-100" src="/img/main/about_us_banner.png" alt="">
+                    </div>
+                    <div class="my-5  fw-medium">
+                        <h1 class="fs-11 fs-sm-19 my-5 text-uppercase fw-semibold">
+                            Надежный партнер для бизнеса
+                        </h1>
+                        <p class="text-dark">
+                            ВсеИнструменты.ру – крупнейший* онлайн-игрок на российском DIY-рынке в сфере поставок инструмента и техники. Предлагаем более 1,7 млн товаров для строительства, ремонта, производства и сферы услуг. Залог нашего успеха – сочетание выгодных условий, высококачественного клиентского сервиса, передовых технологий и развитой логистической инфраструктуры. <br><br>  С момента основания компании в 2006 году мы предоставляем не просто товары, а комплексные решения для улучшения жилищных условий, строительства, важных объектов городской инфраструктуры. ВсеИнструменты.ру – надежный партнер в реализации любых проектов бизнеса.
+                        </p>
+                        <h2 class="fs-7 fs-sm-9 my-5 fw-semibold">
+                            Направления работы
+                        </h2>
+                        <p class="text-dark">
+                            Авторизуйтесь на сайте. Укажите актуальную почту – на нее придет промокод.
+                            Найдите товар, о котором хотите написать отзыв: через поиск на сайте, в истории заказов или в каталоге START.
+                            Откройте страницу товара и перейдите на вкладку «Отзывы».
+                            Нажмите «Написать отзыв», заполните форму и отправьте отзыв, нажав соответствующую кнопку.
+                        </p>
+                        <h2 class="fs-7 fs-sm-9 my-5 fw-semibold">
+                            Еще какой-то подзаголовок
+                        </h2>
+                        <p class="text-dark">
+                            <ul>
+                                <li>Расскажите, для чего заказывали товар и как его используете.</li>
+                                <li>Отметьте преимущества, которые оценили в работе.</li>
+                                <li>Опишите особенности функций товара.</li>
+                                <li>Оставьте советы другим пользователям.</li>
+                                <li>Приложите фото товара и/или видео – это необязательно, но будет большим плюсом.</li>
+                            </ul>
+                        </p>
+                        <p class="text-dark">
+                            Модератор вправе отклонить отзыв, если его содержание противоречит условиям публикации на сайте. Проверка занимает до 3 рабочих дней.
+                        </p>
+                        <h1 class="fs-11 fs-sm-19 my-5 text-uppercase fw-semibold">
+                            факты о нас
+                        </h1>
+                        {% set facts = [
+                            {
+                                title: 'с 2018',
+                                text: 'работаем'
+                            },
+                            {
+                                title: '95%',
+                                text: 'инвесторов приходят<br>по рекомендации'
+                            },
+                            {
+                                title: '800+',
+                                text: 'реальных отзыва'
+                            },
+                            {
+                                title: '55',
+                                text: 'человек в штате<br>и на аутсорсе'
+                            },
+                            {
+                                title: '98%',
+                                text: 'гостей возвращаются<br>обратно'
+                            },
+                            {
+                                title: '150 млн',
+                                text: 'общая стоимость<br>объектов',
+                            }
+                        ] %}
+                        <div class="row">
+                            {% for fact in facts %}
+                             <div class="col-6 col-md-4 g-5">
+                                 <div class="bg-white rounded p-10 h-100">
+                                     <div class="text-primary fw-semibold fs-11 fs-sm-19 mb-2">{{ fact.title }}</div>
+                                     <div class="fs-5 mb-1 mb-sm-8">{{ fact.text }}</div>
+                                 </div>
+                             </div>
+
+                            {% endfor %}
+                        </div>
+
+                        <div class="rounded overflow-hidden mt-20">
+                            <img class="object-fit-cover w-100" src="/img/about/video.png" alt="">
+                        </div>
+
+                        {% include '/inc/main/advantages.twig' %}
+
+                        <h1 class="fs-19 my-5 text-uppercase fw-semibold">
+                            Наши контакты
+                        </h1>
+
+                        <div class="row row-gap-8">
+                            <div class="col-12 col-md-6">
+                                {% set contactInfo = [
+                                    {
+                                        'type': '',
+                                        'title': 'Адрес',
+                                        'text': 'г. Оренбург, ул. Монтажников, д. 32, офис 310'
+                                    },
+                                    {
+                                        'type': 'tel:',
+                                        'title': 'Телефон',
+                                        'text': '+7 (996) 571-46-77'
+                                    },
+                                    {
+                                        'type': 'mailto:',
+                                        'title': 'Email',
+                                        'text': 'greenhouse56@yandex.ru'
+                                    }
+                                ] %}
+                                <div class="d-flex flex-column gap-7">
+
+                                    {% for k,v in contactInfo %}
+                                        <div class="d-flex flex-column gap-3">
+                                            <div class="text-primary fw-semibold fs-5">
+                                                {{ v.title }}
+                                            </div>
+                                            <div class="fs-6">
+                                                <a href="{{ v.type }}" class="link-dark text-decoration-none">
+                                                    {{ v.text }}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+
+                                    <div class="d-flex gap-2">
+                                        {% set socialList = [
+                                            'telegram',
+                                            'vk',
+                                            'youtube',
+                                            'rutube'
+                                        ] %}
+                                        {% for i in socialList %}
+                                            <a href="#" class="contacts-link-social">
+                                                <svg class="icon">
+                                                    <use xlink:href="#{{ i }}"/>
+                                                </svg>
+                                            </a>
+                                        {% endfor %}
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <div class="rounded overflow-hidden h-100 w-100" id="contactPageMap">
+                                    <div style="position:relative;overflow:hidden;"><a
+                                                href="https://yandex.ru/maps/48/orenburg/?utm_medium=mapframe&utm_source=maps"
+                                                style="color:#eee;font-size:12px;position:absolute;top:0px;">Оренбург</a><a
+                                                href="https://yandex.ru/maps/48/orenburg/house/ulitsa_montazhnikov_32/YUwYdwFmSEAFQFtrfXRxdHpnbQ==/?ll=55.166153%2C51.805649&utm_medium=mapframe&utm_source=maps&z=16"
+                                                style="color:#eee;font-size:12px;position:absolute;top:14px;">Улица Монтажников,
+                                            32 на карте Оренбурга — Яндекс Карты</a>
+                                        <iframe src="https://yandex.ru/map-widget/v1/?ll=55.166153%2C51.805649&mode=whatshere&whatshere%5Bpoint%5D=55.166152%2C51.805649&whatshere%5Bzoom%5D=17&z=16"
+                                                width="100%" height="300" frameborder="1" allowfullscreen="true"
+                                                style="position:relative;"></iframe>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="my-15 mt-lg-23">
+                            <div class="mb-8">
+                                <h2 class="fs-19 my-5 mb-2 text-uppercase fw-semibold">
+                                    Категории товаров
+                                </h2>
+                                <div class="fs-8 mb-8">
+                                    Найдёте все необходимое из 100500 товаров в 1050 категориях
+                                </div>
+                            </div>
+
+                            {% set categoryList = [
+                                'Газонокосилки',
+                                'Триммеры',
+                                'Снегоуборочная техника',
+                                'Цепные пилы',
+                                'Кусторезы и высоторезы',
+                                'Воздуходувки и пылесосы',
+                                'Мойки, насосы и компрессоры',
+                                'Аэраторы и скарификаторы',
+                                'Культиваторы',
+                                'Садовые тракторы',
+                                'Лодочные моторы',
+                                'Техника для сада',
+                                'Ручной инструмент',
+                                'Аккумуляторы и зарядные устройства',
+                                'Товары для отдыха и туризма'
+                            ] %}
+
+                            <div class="d-none d-md-block">
+                                <div class="swiper" id="swiperContactPageCatalogList">
+                                    <div class="swiper-wrapper">
+                                        {% for key, val in categoryList %}
+                                            <div class="swiper-slide">
+                                                <a href="/catalog.html"
+                                                   class="link-dark d-flex gap-3 flex-column fs-4 fs-lg-8 text-decoration-none">
+                                                    <div class="bg-light rounded catalog-section-preview p-2">
+                                                        <img src="/img/catalog/section_{{ key }}.png" alt="">
+                                                    </div>
+                                                    <span class="text-uppercase fw-semibold">
+                                                {{ val }}
+                                            </span>
+                                                </a>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-md-none">
+                                <div class="row row-gap-8">
+                                    {% for key, val in categoryList %}
+                                        <div class="col-4 col-md-3">
+                                            <a href="/catalog-section.html"
+                                               class="link-dark d-flex gap-3 flex-column fs-4 fs-lg-7 text-decoration-none">
+                                                <div class="bg-light catalog-section-preview p-2">
+                                                    <img src="/img/catalog/section_{{ key }}.png" alt="">
+                                                </div>
+                                                <span class="text-uppercase fw-semibold">
+                                        {{ val }}
+                                    </span>
+                                            </a>
+                                        </div>
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+        </div>
+        {% include '/inc/callback/email.twig' %}
+
+    </div>
+{% endblock %}

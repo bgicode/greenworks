@@ -248,5 +248,7 @@
 }
 /* Slide styles end */
 
-
+.swiper-button-next:after, .swiper-button-prev:after {
+  content: '';
+}
 

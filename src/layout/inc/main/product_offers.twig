@@ -1,0 +1,57 @@
+<div class="fs-19 my-5 text-uppercase fw-semibold">
+    Присмотритесь к этим предложениям
+</div>
+<div role="tabpanel">
+    <div class="d-flex my-5  border-0 g-3 nav nav-tabs row">
+{#        {% set sections = [#}
+{#            { 'title': 'Хиты продаж', 'active': true },#}
+{#            { 'title': 'Скидки', 'active': false },#}
+{#            { 'title': 'Новинки', 'active': false },#}
+{#            { 'title': 'Рекомендации', 'active': false }#}
+{#        ] %}#}
+        {% for key, section in sections %}
+            <div class="col-lg-3 col-6 ">
+                <button class="w-100 btn rounded-5 py-3 {{ section.active ? ' btn-dark' : ' btn-light' }}"
+                        data-bs-toggle="tab" href="#list-home_{{ key }}" role="tab"
+                        aria-controls="list-home_{{ key }}"
+                        aria-selected="{{ section.active ? 'true' : 'false' }}">
+                    {{ section.title }}
+                </button>
+            </div>
+
+        {% endfor %}
+    </div>
+    <div class="tab-content" id="nav-tabContent">
+        {% for i in 0..3 %}
+            <div class="tab-pane fade {{ i == 0 ? 'show active' : '' }}" id="list-home_{{ i }}"
+                 role="tabpanel" aria-labelledby="list-home_{{ i }}-tab">
+                <div class="row d-none d-md-flex">
+                    {% for i in 1..itenCount %}
+                        <div class="col-12 p-3 col-sm-6 col-md-4 col-lg-3">
+
+                            {% include '../catalog/catalog_item.twig' %}
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="swiper d-block d-md-none" id="swiperCatalogList">
+                    <div class="swiper-wrapper">
+                        {% for i in 0..6 %}
+                            <div class="swiper-slide">
+                                {% include '../catalog/catalog_item.twig' %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="swiper-pagination position-relative mt-9 d-flex justify-content-between"></div>
+                </div>
+
+
+            </div>
+        {% endfor %}
+        <div class="mt-7 text-center">
+            <a href="../catalog.html" class="read-all-link btn btn-outline-primary border-black text-black px-7 py-4">
+                Показать все >
+            </a>
+        </div>
+    </div>
+</div>
